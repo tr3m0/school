@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tabellina</title>
+	</head>
+	<body>
+		<script>
+			let num = prompt("Inserisci un numero: ");
+			let out = "";
+			for (let i = 1; i <= 10; ++i) {
+				out += num + " * " + i + " = " + (num * i) + "\n";
+			}
+			const result = document.createElement("p");
+			result.innerText = out;
+			document.body.append(result);
+		</script>
+	</body>
+</html>
