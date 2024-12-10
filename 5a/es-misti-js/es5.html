@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es5</title>
+</head>
+<body>
+  <script>
+    const deletables = document.getElementsByClassName("cancellabile");
+    for (const deletable of deletables) {
+      deletable.parentNode.removeChild(deletable);
+    }
+  </script>
+</body>
+</html>

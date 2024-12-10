@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es4</title>
+</head>
+<body>
+	<ul id="lista-elementi">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<script>
+		for (const child of document.getElementById("lista-elementi").children) {
+            child.className = "evidenziato";
+		}
+	</script>
+</body>
+</html>

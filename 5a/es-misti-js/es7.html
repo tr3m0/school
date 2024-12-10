@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es7</title>
+</head>
+<body>
+  <div id="contenitore-tabella-mult"></div>
+  <script>
+    const table = document.createElement("table");
+    document.getElementById("contenitore-tabella-mult").appendChild(table);
+    for (let r = 1; r <= 10; ++r) {
+      const row = document.createElement("tr");
+      table.appendChild(row);
+      for (let c = 1; c <= 10; ++c) {
+        const cell = document.createElement("td");
+        cell.innerText = r + " * " + c + " = " + (r * c);
+        row.appendChild(cell);
+      }
+    }
+  </script>
+</body>
+</html>

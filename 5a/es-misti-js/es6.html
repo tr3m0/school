@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6</title>
+</head>
+<body>
+  <div id="contenitore-liste"></div>
+  <script>
+    for (let i = 1; i <= 10; ++i) {
+      const p = document.createElement("p");
+      p.innerText = "Paragrafo " + i;
+      document.body.appendChild(p);
+
+      const ul = document.createElement("ul");
+      document.getElementById("contenitore-liste").appendChild(ul);
+      for (let j = 1; j <= i; ++j) {
+        ul.appendChild(document.createElement("li"));
+      }
+    }
+  </script>
+</body>
+</html>
