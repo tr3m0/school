@@ -19,15 +19,36 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [],
 
-	"postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts",
-	"postStartCommand": "git config --global user.name \"Leonardo Tremolada\" && git config --global user.email leonardo.tremolada@gmail.com && git config --global alias.tree \"log --oneline --all --graph\"",
+	"postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts && git config --global user.name \"Leonardo Tremolada\" && git config --global user.email leonardo.tremolada@gmail.com && git config --global alias.tree \"log --oneline --all --graph\"",
 
 	// Configure tool-specific properties.
 	"customizations" : {
 		"jetbrains" : {
-			"backend" : "IntelliJ"
+			"backend" : "IntelliJ",
+			"plugins": [
+				"mobi.hsz.idea.gitignore",
+				"com.intellij.modules.json",
+				"fleet.eslint",
+				"fleet.prettier",
+				"fleet.shell",
+				"HtmlTools",
+				"com.intellij.database",
+				"NodeJS",
+				"PythonCore",
+				"Pythonid",
+				"com.jetbrains.php",
+				"PlantUML integration",
+				"com.almightyalpaca.intellij.plugins.discord",
+				"es.upm.dit.gsi.intellijbootstrapplugin",
+				"fleet.css",
+				"fleet.xml",
+				"JavaScript",
+				"com.github.copilot",
+				"fleet.java",
+				"org.jetbrains.plugins.javaFX"
+			]
 		}
 	},
 
