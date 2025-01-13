@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="todo"></ul>
+    <form>
+        <input type="text" id="task">
+        <input type="button" id="add-task" value="add">
+    </form>
+    <script>
+        function eraseBtn(li) {
+            const btn = document.createElement("button");
+            btn.textContent = "elimina";
+            btn.addEventListener("click", () => todo.removeChild(li));
+            return btn;
+        }
+        const todo = document.getElementById("todo");
+        const task = document.getElementById("task");
+        document.getElementById("add-task").addEventListener("click", () => {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(task.f));
+            li.appendChild(eraseBtn(li));
+            todo.appendChild(li);
+        });
+    </script>
+</body>
+</html>

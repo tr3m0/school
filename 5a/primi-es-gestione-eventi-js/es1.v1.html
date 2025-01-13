@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>es1.v1</title>
+</head>
+<body>
+	<button id="counter">Cliccami!</button>
+	<script>
+		const LEFT_BUTTON = 0;
+		const RIGHT_BUTTON = 2;
+		let clicks = 0;
+		let startTime;
+		const counter = document.getElementById("counter");
+		counter.addEventListener("contextmenu", () => event.preventDefault());
+		counter.addEventListener("mousedown", () => startTime = Date.now());
+		counter.addEventListener("mouseup", (e) => {
+			event.preventDefault();
+			if (e.button === RIGHT_BUTTON) {
+				counter.textContent = "Mi hai cliccato " + (--clicks) + " volte"
+			} else {
+				const elapsed = Date.now() - startTime;
+				if (elapsed >= 1000) {
+					counter.textContent = "Cliccami!";
+					clicks = 0;
+				} else {
+					counter.textContent = "Mi hai cliccato " + (++clicks) + " volte"
+				}
+			}
+		});
+	</script>
+</body>
+</html>
