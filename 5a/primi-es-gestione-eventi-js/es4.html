@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es4</title>
+</head>
+<body>
+	<h1>Press a key</h1>
+	<p>Pressed key:</p>
+	<div id="key-view"></div>
+	<script>
+		const keyView = document.getElementById("key-view");
+		document.addEventListener("keydown", (event) => keyView.textContent = event.key);
+    </script>
+</body>
+</html>

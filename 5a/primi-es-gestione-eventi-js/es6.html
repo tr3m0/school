@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6</title>
+</head>
+<body>
+	<button id="change-color">Change color</button>
+	<script>
+		const COLORS = ["red", "green", "blue", "yellow", "purple", "orange"];
+		document.getElementById("change-color").addEventListener("click", () => {
+			const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+			document.body.style.backgroundColor = randomColor;
+		});
+	</script>
+</body>
+</html>

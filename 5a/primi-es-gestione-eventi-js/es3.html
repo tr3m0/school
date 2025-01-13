@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es3</title>
+</head>
+<body>
+	<label for="color">Select a color for the page</label>
+	<select id="color">
+		<option value="white">White</option>
+		<option value="red">Red</option>
+		<option value="green">Green</option>
+		<option value="blue">Blue</option>
+	</select>
+	<script>
+		const color = document.getElementById("color");
+		color.addEventListener("change", () => document.body.style.backgroundColor = color.value);
+	</script>
+</body>
+</html>
