@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es2</title>
+</head>
+<body>
+  <form id="user-data">
+    <input type="text" name="name" id="name" placeholder="Nome"> <br>
+    <input type="email" name="email" id="email" placeholder="Email"><br>
+    <input type="submit" name="submit" value="Invia">
+    <p id="counter-label" hidden="hidden">Reindirizzamento in <span id="counter"></span> secondi</p>
+  </form>
+  <script>
+    const testInput = input => {
+      if (input.value === "") {
+        input.parentElement.insertBefore(document.createTextNode("Il campo è vuoto"), input.nextSibling);
+        input.parentElement.insertBefore(document.createElement("br"), input.nextSibling);
+        return false;
+      }
+      return true;
+    }
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const counter = document.getElementById("counter");
+    let count = 5;
+
+
+    document.getElementById("user-data").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (testInput(name) && testInput(email)) {
+        event.target.prepend("Dati inviati correttamente", document.createElement("br"));
+
+        document.getElementById("counter-label").hidden = false;
+
+        const counterInterval = setInterval(() => {
+          counter.textContent = count;
+          count--;
+        }, 1000);
+
+        setTimeout(() => {
+          clearInterval(counterInterval);
+          window.location.href = "thankyou.html";
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>

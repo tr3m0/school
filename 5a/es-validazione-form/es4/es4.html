@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es4</title>
+</head>
+<body>
+<form id="login-form">
+	<input type="email" name="email" id="email" placeholder="Email"><br>
+	<input type="password" name="password" id="password" placeholder="Password"><br>
+	<input type="submit" name="submit" value="Login">
+</form>
+<script>
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    document.getElementById("login-form").addEventListener("submit", event => {
+        event.preventDefault();
+
+        if (email.value === "" || password.value === "") {
+            event.target.prepend("Credenziali invalide", document.createElement("br"));
+        } else {
+            sessionStorage.setItem("email", email.value);
+            sessionStorage.setItem("password", password.value);
+            window.location.href = "dashboard.html";
+        }
+    });
+</script>
+</body>
+</html>
