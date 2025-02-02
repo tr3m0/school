@@ -1,0 +1,9 @@
+.error {
+    color: red;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
