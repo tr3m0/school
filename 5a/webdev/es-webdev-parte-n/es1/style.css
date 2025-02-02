@@ -1,0 +1,59 @@
+body {
+    background-color: darkolivegreen;
+    display: grid;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: black;
+    width: fit-content;
+
+    & > #user-area {
+        display: flex;
+        justify-content: center;
+
+        & > #display {
+            background-color: darkblue;
+            color: white;
+            border: 5px solid black;
+            padding: 2%;
+        }
+
+        & > #input-area {
+            background-color: saddlebrown;
+            border: 5px solid black;
+
+            padding: 2%;
+
+            display: grid;
+            justify-content: center;
+            align-content: center;
+
+            & > .machine-button {
+                background-color: darkgray;
+            }
+        }
+    }
+
+    & > #capsules-loader {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+
+        padding: 5%;
+        margin-top: 10%;
+    }
+}
+
+.error {
+    color: red;
+}
+
+.report {
+    color: white;
+}

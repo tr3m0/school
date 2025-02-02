@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Es1</title>
+</head>
+<body>
+	<header>
+		<h1>Coffee Machine</h1>
+	</header>
+	<main>
+		<div id="user-area">
+			<div id="display">
+				Total capsules: <span id="total-capsules"></span>
+				<div id="logger">
+					<br>
+				</div>
+			</div>
+			<div id="input-area">
+				<input type="text" id="input-user-id" placeholder="User's ID">
+				<button id="get-coffee" class="machine-button">Get a coffee</button>
+				<button id="add-user" class="machine-button">Add user</button>
+			</div>
+		</div>
+		<div id="capsules-loader">
+			<input type="number" min="0" id="capsule-load-count">
+			<button id="capsule-load-trigger">Load</button>
+		</div>
+	</main>
+	<script src="main.js" defer></script>
+</body>
+</html>
