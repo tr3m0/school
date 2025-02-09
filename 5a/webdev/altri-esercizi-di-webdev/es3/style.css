@@ -1,0 +1,10 @@
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+header {
+    background-color: purple;
+    color: white;
+}

@@ -1,0 +1,25 @@
+.grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+header {
+    display: flex;
+    background-color: purple;
+    color: white;
+
+    .redirect-button {
+        color: black;
+        background-color: grey;
+        text-underline: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+.card {
+    border: 2px solid black;
+    box-shadow: 0 0 10px;
+}

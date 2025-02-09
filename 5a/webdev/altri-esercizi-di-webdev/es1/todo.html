@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Todo</title>
+</head>
+<body>
+	<header>
+		<h1>Hi <span id="username"></span>!</h1>
+		<a href="stats.html">
+			<button>Stats</button>
+		</a>
+		<button id="logout">Logout</button>
+	</header>
+	<main>
+		<form id="add-new-todo">
+			<input type="text" id="task-name" placeholder="Task's name" required>
+			<button type="submit">New task</button>
+		</form>
+		<p>Your TODOs:</p>
+		<ul id="todos-list">
+		</ul>
+	</main>
+	<script src="todo.js"></script>
+</body>
+</html>

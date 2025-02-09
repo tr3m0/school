@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.error {
+    color: red;
+}
+
+.todo {
+    display: grid;
+    align-content: center;
+    justify-content: left;
+}
+
+header {
+    background-color: purple;
+    color: white;
+}
