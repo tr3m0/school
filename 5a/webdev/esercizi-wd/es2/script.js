@@ -11,29 +11,32 @@ function newProduct(p) {
     const cartBtn = document.createElement("button");
 
     name.textContent = p.name;
-    price.textContent = p.price;
+    price.textContent = "€" + p.price;
     cartBtn.textContent = "Aggiungi al carrello";
     cartBtn.onclick = () => {
         addToCart(p);
     };
-    container.append(name, price);
+    container.append(name, price, cartBtn);
     return container;
 }
 
 const PRODUCTS = [
-    { nome: "Notebook", prezzo: 999.99 },
-    { nome: "Smartphone", prezzo: 699.99 },
-    { nome: "Monitor", prezzo: 199.99 },
-    { nome: "Tastiera meccanica", prezzo: 79.99 },
-    { nome: "Mouse gaming", prezzo: 49.99 },
-    { nome: "AirPods", prezzo: 159.99 },
-    { nome: "Console portatile", prezzo: 299.99 },
-    { nome: "Casco audio", prezzo: 119.99 },
-    { nome: "Scheda grafica", prezzo: 499.99 },
-    { nome: "Altoparlanti Bluetooth", prezzo: 89.99 }
+    { name: "Notebook", price: 999.99 },
+    { name: "Smartphone", price: 699.99 },
+    { name: "Monitor", price: 199.99 },
+    { name: "Tastiera meccanica", price: 79.99 },
+    { name: "Mouse gaming", price: 49.99 },
+    { name: "AirPods", price: 159.99 },
+    { name: "Console portatile", price: 299.99 },
+    { name: "Casco audio", price: 119.99 },
+    { name: "Scheda grafica", price: 499.99 },
+    { name: "Altoparlanti Bluetooth", price: 89.99 }
 ];
 
-const productsPane = document.getElementById("products");
-PRODUCTS.map(newProduct).forEach(node => {
-    productsPane.appendChild(node);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("products").append(...PRODUCTS.map(newProduct));
+});
+
+document.getElementById("cart").addEventListener("click", () => {
+    window.location.href = "cart.html";
 });
