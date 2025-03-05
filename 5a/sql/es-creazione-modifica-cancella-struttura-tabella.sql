@@ -1,0 +1,15 @@
+CREATE TABLE Clienti(
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(10) NOT NULL,
+    secondonome VARCHAR(10),
+    cognome VARCHAR(10) NOT NULL,
+    email VARCHAR(20) UNIQUE
+);
+
+ALTER TABLE Clienti ADD DataDiRegistrazione DATE NOT NULL;
+ALTER TABLE Clienti MODIFY email VARCHAR(50);
+ALTER TABLE Clienti DROP secondonome;
+ALTER TABLE Clienti DROP cognome;
+ALTER TABLE Clienti ADD CONSTRAINT UNIQUE (email);
+ALTER TABLE Clienti MODIFY email VARCHAR(50) NOT NULL;
+DROP TABLE Clienti;
