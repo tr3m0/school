@@ -1,0 +1,42 @@
+[
+  {
+    "username": "user1",
+    "password": "p@ssw0rd1!"
+  },
+  {
+    "username": "admin2",
+    "password": "Adm!n2023"
+  },
+  {
+    "username": "guest3",
+    "password": "Gue$T_2023"
+  },
+  {
+    "username": "developer4",
+    "password": "Dev#2023"
+  },
+  {
+    "username": "manager5",
+    "password": "M@nager!23"
+  },
+  {
+    "username": "tester6",
+    "password": "T3stP@ss"
+  },
+  {
+    "username": "support7",
+    "password": "Supp0rt!"
+  },
+  {
+    "username": "analyst8",
+    "password": "An@lyst2023"
+  },
+  {
+    "username": "editor9",
+    "password": "Edit0r#Pass"
+  },
+  {
+    "username": "viewer10",
+    "password": "V!ewer2023"
+  }
+]
