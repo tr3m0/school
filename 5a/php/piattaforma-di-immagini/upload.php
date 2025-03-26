@@ -1,43 +1,38 @@
 <?php
-    include("common.php");
+    require "lib/image.php";
 
-    $title = @$_POST["title"];
-    $description = @$_POST["description"];
-    $image = @$_POST["image"];
-    $miniature = @$_POST["miniature"];
-    if (isset($title) && isset($description) && isset($image) && isset($miniature)) {
-        $image_filename = "images/$title";
-        $miniature_filename = "miniatures/$title";
-        file_put_contents($image_filename, $image);
-        file_put_contents($miniature_filename, $miniature);
-        $images[] = [
-            "title" => $title,
-            "description" => $description,
-            "path" => $image_filename,
-            "miniature" => $miniature_filename
-        ];
-        file_put_contents("image-data.json", json_encode($images));
+    if ($_POST) {
+        $path = "images/{$_POST["title"]}";
+        $min_path = "images/min/{$_POST["title"]}";
+
+        if (!is_dir("images")) {
+            mkdir("images");
+        }
+        if (!is_dir("images/min")) {
+            mkdir("images/min");
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $path) &&
+            move_uploaded_file($_FILES["miniature"]["tmp_name"], $min_path)) {
+
+            put_image([
+                "title" => $_POST["title"],
+                "description" => $_POST["description"],
+                "path" => $path,
+                "miniature" => $min_path
+            ]);
+        }
     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Image platform</title>
+    <?php require "lib/html-meta.html" ?>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="upload.php">Upload images</a>
-            <?= searchBar() ?>
-        </nav>
-    </header>
+    <?php require "lib/header.html" ?>
     <main>
-        <form action="upload.php" method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div>
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" required>
@@ -47,14 +42,14 @@
                 <input type="text" name="description" id="description">
             </div>
             <div>
-                <label for="title">Image</label>
-                <input type="file" name="image" id="image" accept="image/*" required>
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" required accept="image/*">
             </div>
             <div>
                 <label for="miniature">Miniature</label>
-                <input type="file" name="miniature" id="miniature" accept="image/*" required>
+                <input type="file" name="miniature" id="miniature" required accept="image/*">
             </div>
-            <button type="submit">Upload</button>
+            <input type="submit">
         </form>
     </main>
 </body>
